@@ -38,7 +38,113 @@
           <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
         </div>
 
-        <p>temp</p>
+        <p>This repository contains template files in order to prepare SCORM 1.2 LMS exam for e-learning purposes. All content-based files are written HTML.</p>
+
+<p>Whole zipped repository can be instantly imported as a SCORM package in Moodle and OLAT.</p>
+
+<h2>
+<a id="features-and-libraries" class="anchor" href="#features-and-libraries" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features and libraries</h2>
+
+<ul>
+<li>Look &amp; feel: <a href="http://getbootstrap.com">Bootstrap</a>,</li>
+<li>Math notation: <a href="https://www.mathjax.org">MathJax</a>,</li>
+<li>Code syntax highlighting: <a href="http://alexgorbatchev.com/SyntaxHighlighter">SyntaxHighlighter</a>,</li>
+<li>Toast messages to check connection with LMS: <a href="https://github.com/scottoffen/jquery.toaster">jQuery toaster</a>,</li>
+<li>Text decoder: <a href="http://www.webtoolkit.info/">Web Toolkit</a>,</li>
+<li>Exam: single and multiple choice.</li>
+</ul>
+
+<p>The exam is designed for one-time form send (all UI is blocked and connection with LMS is closed).</p>
+
+<p>All submitted answers (also with correct answers) can be displayed in Moodle/OLAT per user.</p>
+
+<h2>
+<a id="preview" class="anchor" href="#preview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Preview</h2>
+
+<ul>
+<li>
+<a href="materials/exam.html">Exam</a>.</li>
+</ul>
+
+<p>Note that in the preview you do not have connection to LMS system, so an error will be displayed by toaster plugin.</p>
+
+<h3>
+<a id="example-result" class="anchor" href="#example-result" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example result</h3>
+
+<table>
+<thead>
+<tr>
+<th>element</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cmi.comments</td>
+<td>Wed Jan 20 2016 17:53:32 GMT+0100</td>
+</tr>
+<tr>
+<td>cmi.core.lesson_status</td>
+<td>passed</td>
+</tr>
+<tr>
+<td>cmi.core.score.max</td>
+<td>32</td>
+</tr>
+<tr>
+<td>cmi.core.score.min</td>
+<td>0</td>
+</tr>
+<tr>
+<td>cmi.core.score.raw</td>
+<td>30</td>
+</tr>
+<tr>
+<td>cmi.core.total_time</td>
+<td>3 min 40 sec</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td>cmi.interactions_4.correct_responses_0.pattern</td>
+<td>c</td>
+</tr>
+<tr>
+<td>cmi.interactions_4.id</td>
+<td>1</td>
+</tr>
+<tr>
+<td>cmi.interactions_4.result</td>
+<td>correct</td>
+</tr>
+<tr>
+<td>cmi.interactions_4.student_response</td>
+<td>c</td>
+</tr>
+<tr>
+<td>cmi.interactions_4.type</td>
+<td>choice</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="brief-how-to" class="anchor" href="#brief-how-to" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Brief how-to</h2>
+
+<ul>
+<li>
+<code>imsmanifest.xml</code> - defines tree of modules (practically nothing to change here).</li>
+<li>
+<code>materials/exam.html</code> - header and footer have CSS and JS code to proper load the libraries; main part of body has quiz questions; the beginning of body has list of correct answers.</li>
+</ul>
+
+<p>Answers can be either in plain or obfuscated form. You may see in browsers debugger how the obfuscation is done - check <code>StringED.encode()</code> and <code>StringED.decode()</code> functions in <code>materials/js/webtoolkit.js</code>.</p>
       </section>
 
     </div>
